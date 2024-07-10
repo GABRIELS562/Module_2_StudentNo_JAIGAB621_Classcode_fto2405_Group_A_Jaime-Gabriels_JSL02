@@ -36,6 +36,8 @@ const addNewGoal = () => {
     // The event listener that removes goals when clicked is not related to this issue.
     // Focus on preventing duplicates for now.
 
+    
+
     const existingGoals = document.querySelectorAll('#goalList li');
 
     // Check for duplicates
@@ -47,7 +49,9 @@ const addNewGoal = () => {
         }
     }
 
-    // Clear the input field
+    
+
+    // This is to clear the input field
     document.getElementById('goalInput').value = '';
 
 
