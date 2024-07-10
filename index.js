@@ -35,6 +35,22 @@ const addNewGoal = () => {
     // ⚠️ Hint 4: Event listener
     // The event listener that removes goals when clicked is not related to this issue.
     // Focus on preventing duplicates for now.
+
+    const existingGoals = document.querySelectorAll('#goalList li');
+
+    // Check for duplicates
+    for (let i = 0; i < existingGoals.length; i++) {
+        if (existingGoals[i].textContent.trim() === goalInput) {
+            alert("This goal is already in the list.");
+            return;
+            
+        }
+    }
+
+    // Clear the input field
+    document.getElementById('goalInput').value = '';
+
+
     
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
@@ -73,3 +89,9 @@ const submitMealPlan = (event) => {
 };
 
 document.querySelector('#mealPlanForm').addEventListener('submit', submitMealPlan);
+
+
+
+
+
+    
