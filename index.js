@@ -40,7 +40,12 @@ const addNewGoal = () => {
 
     const existingGoals = document.querySelectorAll('#goalList li');
 
-    // Check for duplicates
+    if (goalInput === "") {
+        alert ("The goal field can not be empty");
+        return; 
+    }
+
+
     for (let i = 0; i < existingGoals.length; i++) {
         if (existingGoals[i].textContent.trim() === goalInput) {
             alert("This goal is already in the list.");
